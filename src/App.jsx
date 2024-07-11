@@ -4,6 +4,7 @@ import About from './templates/About'
 import Contact from './templates/Contact'
 import Works from './templates/Works'
 import Work from './templates/Work'
+import './styles/scss/styles.scss'
 
 function App() {
   return (
