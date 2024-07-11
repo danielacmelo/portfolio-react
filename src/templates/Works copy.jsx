@@ -3,7 +3,7 @@ import Loading from '../utilities/Loading'
 import { restBase, featuredImage } from '../utilities/Utilities'
 
 const Works = () => {
-    const restPath = restBase + 'dcm-work?_embed&order=asc'
+    const restPath = restBase + 'dcm-work?_embed&orderby=title&order=asc'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
 
@@ -32,9 +32,7 @@ const Works = () => {
                             <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
                         }
                         <h2>{post.title.rendered}</h2>
-                        {post.acf && post.acf.tools_and_skills && 
-                            <h3>{Array.isArray(post.acf.tools_and_skills) ? post.acf.tools_and_skills.join(' | ') : post.acf.tools_and_skills}</h3>
-                        }
+                        <div className="entry-content" dangerouslySetInnerHTML={{__html:post.content.rendered}}></div>
                     </article>
                 )}
             </>
