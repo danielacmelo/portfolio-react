@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react'
 import Loading from '../utilities/Loading'
 import { restBase, featuredImage } from '../utilities/Utilities'
 
+const toUppercaseFirstLetter = (text) => {
+    return text.split(' ')
+               .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+               .join(' ');
+}
+
 const Works = () => {
     const restPath = restBase + 'dcm-work?_embed&order=asc'
     const [restData, setData] = useState([])
@@ -10,7 +16,7 @@ const Works = () => {
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(restPath)
-            if ( response.ok ) {
+            if (response.ok) {
                 const data = await response.json()
                 setData(data)
                 setLoadStatus(true)
@@ -20,7 +26,7 @@ const Works = () => {
         }
         fetchData()
     }, [restPath])
-    
+
     return (
         <>
         { isLoaded ?
@@ -28,13 +34,15 @@ const Works = () => {
                 <h1>Works</h1>
                 {restData.map(post => 
                     <article key={post.id} id={`post-${post.id}`}>
-                        {post.featured_media !== 0 && post._embedded &&
-                            <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
-                        }
-                        <h2>{post.title.rendered}</h2>
-                        {post.acf && post.acf.tools_and_skills && 
-                            <h3>{Array.isArray(post.acf.tools_and_skills) ? post.acf.tools_and_skills.join(' | ') : post.acf.tools_and_skills}</h3>
-                        }
+                        <a href={`works/${post.slug}`}>
+                            {post.featured_media !== 0 && post._embedded &&
+                                <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
+                            }
+                            <h2>{post.title.rendered}</h2>
+                            {post.acf && post.acf.tools_and_skills && 
+                                <h3>{Array.isArray(post.acf.tools_and_skills) ? toUppercaseFirstLetter(post.acf.tools_and_skills.join(' | ')) : toUppercaseFirstLetter(post.acf.tools_and_skills)}</h3>
+                            }
+                        </a>
                     </article>
                 )}
             </>
