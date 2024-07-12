@@ -1,0 +1,24 @@
+// Nav Styles
+@use "variables" as *;
+@use "mixins" as *;
+
+.siteNavegation {
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        color: $detailColor;
+        
+        text-decoration: none;
+            &:hover, &:focus, &:active {
+                background-color: rgba($detailColor, 0.1);
+        }
+    } 
+}
+

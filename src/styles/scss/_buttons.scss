@@ -1,0 +1,39 @@
+// Body Styles
+@use "variables" as *;
+
+.button {
+    font-size: .9375rem;
+    color: $detailColor;
+    background-color: $backgroundColor;
+    border: 1px solid $detailColor;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px $detailColor;
+    padding: .5rem .9375rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+    background-color: $detailColor;
+    color: $backgroundColor;
+    border: 1px solid $detailColor;
+}
+
+.button:link,
+.button:visited {
+    color: $detailColor;
+    text-decoration: none;
+}
+
+.button:hover {
+    color: $backgroundColor;
+    text-decoration: none;
+}
+
+.button_margin {
+    margin-top: 55px;
+}
+
+

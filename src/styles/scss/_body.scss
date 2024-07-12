@@ -1,0 +1,32 @@
+// Body Styles
+@use "variables" as *;
+
+body {
+    background-color: $backgroundColor;
+    padding: 1rem 2rem 0;
+}
+
+.gallery img{
+    padding-bottom: 20px;
+}
+
+#post-14 svg path {
+    fill: $detailColor;
+}
+
+.wp-block-social-link {
+    svg {
+        margin-right: 8px;
+        width: 35px;
+        height: 35px;
+        font-size: .8125rem; // Added missing semicolon
+    }
+     
+    a {
+        text-decoration: none;
+    }
+}    
+
+.wp-social-link {       
+    margin-bottom: 1.5625rem;  
+}

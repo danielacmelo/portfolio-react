@@ -1,0 +1,17 @@
+// Main Styles
+@use "variables" as *;
+@use "mixins" as *;
+
+main {
+    flex: 1;
+    padding: $section-padding;
+
+    @include mq(62rem){
+        .section-about,
+        .section-not-found,
+        .section-favourites { 
+            padding:$section-desktop-padding;
+        }
+
+    }
+}

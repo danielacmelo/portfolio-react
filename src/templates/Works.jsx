@@ -32,19 +32,21 @@ const Works = () => {
         { isLoaded ?
             <>
                 <h1>Works</h1>
-                {restData.map(post => 
-                    <article key={post.id} id={`post-${post.id}`}>
-                        <a href={`works/${post.slug}`}>
-                            {post.featured_media !== 0 && post._embedded &&
-                                <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
-                            }
-                            <h2>{post.title.rendered}</h2>
-                            {post.acf && post.acf.tools_and_skills && 
-                                <h3>{Array.isArray(post.acf.tools_and_skills) ? toUppercaseFirstLetter(post.acf.tools_and_skills.join(' | ')) : toUppercaseFirstLetter(post.acf.tools_and_skills)}</h3>
-                            }
-                        </a>
-                    </article>
-                )}
+                <div className="works">
+                    {restData.map(post => 
+                        <article key={post.id} id={`post-${post.id}`}>
+                            <a href={`works/${post.slug}`}>
+                                {post.featured_media !== 0 && post._embedded &&
+                                    <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
+                                }
+                                <h2>{post.title.rendered}</h2>
+                                {post.acf && post.acf.tools_and_skills && 
+                                    <h3>{Array.isArray(post.acf.tools_and_skills) ? toUppercaseFirstLetter(post.acf.tools_and_skills.join(' | ')) : toUppercaseFirstLetter(post.acf.tools_and_skills)}</h3>
+                                }
+                            </a>
+                        </article>
+                    )}
+                </div>
             </>
         : 
             <Loading />

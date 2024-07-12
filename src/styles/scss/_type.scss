@@ -1,0 +1,36 @@
+// Typography Styles
+@use "variables" as *;
+
+body {
+    font-family: $font;
+    color: $textColor;
+}
+
+h1, h2, h3, h4 {
+    font-family: $font;
+    margin-bottom: 2.8125rem;
+    color: $detailColor
+}
+
+.entry-content p {
+    margin: 1.25rem 0 2.8125rem 0;
+    
+}
+
+.works {
+    h2, h3, figure, img, a {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    }
+
+    h3 {
+        margin: 0 0 1.875rem;
+        padding: 0;
+    }
+}
+
+
+
+    
+

@@ -1,0 +1,51 @@
+// Header styles
+@use "variables" as *;
+@use "mixins" as *;
+
+header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1rem 0;
+    
+    .logo {
+
+        height: 2.6875rem;
+        padding: 0;
+        margin: 0   ;
+    }
+
+    .logo img {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+    
+    
+    .siteNavegation {
+        padding: 0 1 rem;
+        font-weight: bold;
+        
+        a {
+            display: block;
+            padding: 0 5px;
+        }
+
+    
+
+    }
+    
+ 
+    //mediaquery
+    
+    @include mq(37.5rem){
+       
+
+        .siteNavegation a {
+            font-size: 1.25rem;
+            padding: 0 25px;
+ 
+        }
+    }      
+}
+

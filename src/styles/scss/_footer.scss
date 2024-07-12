@@ -1,0 +1,13 @@
+// Footer Styles
+@use "variables" as *;
+
+footer {
+    padding: .875rem;
+    text-align: center;
+    font-size: small;
+
+    p{
+        margin: .3125rem;
+    }
+}
+
