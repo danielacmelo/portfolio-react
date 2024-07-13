@@ -4,14 +4,14 @@
 
 main {
     flex: 1;
-    padding: $section-padding;
+    // padding: $mobile-padding;
 
-    @include mq(62rem){
-        .section-about,
-        .section-not-found,
-        .section-favourites { 
-            padding:$section-desktop-padding;
-        }
-
+    figure, img, a {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
     }
+
+
+   
 }

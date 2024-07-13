@@ -2,7 +2,6 @@
 @use "variables" as *;
 
 .button {
-    font-size: .9375rem;
     color: $detailColor;
     background-color: $backgroundColor;
     border: 1px solid $detailColor;
@@ -11,29 +10,26 @@
     padding: .5rem .9375rem;
     text-decoration: none;
     cursor: pointer;
+    width: fit-content;
+    display: inline-block;
+
+
+    &:hover, &:active, &:focus {
+        background-color: $detailColor;
+        border: 1px solid $detailColor;
+        color: $backgroundColor;
+        text-decoration: none;
+        
+        a {
+            color: $backgroundColor;
+        }
+    }
 }
 
-.button:hover,
-.button:active,
-.button:focus {
-    background-color: $detailColor;
-    color: $backgroundColor;
-    border: 1px solid $detailColor;
-}
 
-.button:link,
-.button:visited {
-    color: $detailColor;
-    text-decoration: none;
-}
-
-.button:hover {
-    color: $backgroundColor;
-    text-decoration: none;
-}
-
-.button_margin {
+#post-8 .button_margin {
     margin-top: 55px;
 }
+
 
 

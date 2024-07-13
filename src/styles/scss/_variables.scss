@@ -4,12 +4,16 @@ $textColor:#353535;
 $detailColor: #284B63;
 
 // Layout
-$section-padding: 1rem 1.25rem;
-$section-desktop-padding: 1rem 1.75rem;
-$section-margin-botton: 2rem;
+$mobile-padding: 1rem 3rem 0;
+$tablet-padding: 1rem 4rem 0;
+$desktop-padding: 1rem 5rem 0;
+
 
 // Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 // Type
 $font: "Open Sans", sans-serif;
+
+
+

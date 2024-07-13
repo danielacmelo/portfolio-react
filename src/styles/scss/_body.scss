@@ -3,11 +3,28 @@
 
 body {
     background-color: $backgroundColor;
-    padding: 1rem 2rem 0;
+    padding: $mobile-padding;
+
+
+    @media (min-width: 37.5em) {
+        padding: $tablet-padding;
+    }
+
+    @media (min-width: 50em) {
+        padding: $desktop-padding;
+    }
 }
 
-.gallery img{
-    padding-bottom: 20px;
+.gallery {
+    @media (min-width: 50em) {
+        display: grid;
+        grid-template-columns: repeat(2, 20.625rem);
+        grid-gap: 1.25rem;
+    } 
+
+    @media (min-width: 75rem) {
+        grid-template-columns: repeat(4, 1fr);
+    } 
 }
 
 #post-14 svg path {
@@ -16,10 +33,18 @@ body {
 
 .wp-block-social-link {
     svg {
+        display: block;
         margin-right: 8px;
         width: 35px;
         height: 35px;
-        font-size: .8125rem; // Added missing semicolon
+        font-size: .8125rem; 
+
+    @media (min-width: 50em) {
+        display: inline;
+        width: 45px;
+        height: 45px;
+        font-size: 16rem; 
+        } 
     }
      
     a {
@@ -29,4 +54,26 @@ body {
 
 .wp-social-link {       
     margin-bottom: 1.5625rem;  
+}
+ 
+#post-14  {
+
+    @media (min-width: 50em) {
+        margin-left: 7rem;
+
+        } 
+
+}
+
+
+.works {
+    @media (min-width: 50em) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.25rem;
+    } 
+
+    @media (min-width: 75rem) {
+        grid-template-columns: repeat(4, 1fr);
+    } 
 }

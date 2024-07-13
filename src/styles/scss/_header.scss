@@ -6,10 +6,9 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 1rem 0;
+        padding-bottom: 1rem;
     
     .logo {
-
         height: 2.6875rem;
         padding: 0;
         margin: 0   ;
@@ -22,7 +21,7 @@ header {
     }
     
     
-    .siteNavegation {
+    .site-navegation {
         padding: 0 1 rem;
         font-weight: bold;
         
@@ -35,13 +34,10 @@ header {
 
     }
     
- 
-    //mediaquery
     
     @include mq(37.5rem){
        
-
-        .siteNavegation a {
+        .site-navegation a {
             font-size: 1.25rem;
             padding: 0 25px;
  
