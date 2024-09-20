@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Loading from '../utilities/Loading'
 import { restBase , featuredImage } from '../utilities/Utilities'
+import 'animate.css'
 
 const Post = () => {
     const { slug } = useParams();
@@ -30,7 +31,7 @@ const Post = () => {
                     <article id={`post-${restData.id}`}>
                         {restData.featured_media !== 0 && restData._embedded && (
                             <figure
-                                className="featured-image"
+                                className="featured-image animate__animated animate__fadeIn"
                                 dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}
                             ></figure>
                         )}

@@ -2,6 +2,7 @@ import { useState, useEffect, } from 'react'
 import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
 import { Link } from 'react-router-dom'
+import 'animate.css'
 
 const Home = () => {
     const restPath = restBase + 'pages/8'
@@ -25,7 +26,7 @@ const Home = () => {
     return (
         <>
         { isLoaded ?
-            <article id={`post-${restData.id}`}>
+            <article className="animate__animated animate__fadeIn" id={`post-${restData.id}`}>
                 <h1 className="sr-only">Dani Melo</h1>
                 <div className="entry-content" dangerouslySetInnerHTML={{ __html: restData.content.rendered }}>
                 </div>

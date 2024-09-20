@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
+import 'animate.css'
 
 const Home = () => {
     const restPath = restBase + 'pages/14'
@@ -25,7 +26,7 @@ const Home = () => {
         <>
         { isLoaded ?
             <article id={`post-${restData.id}`}>
-            <h1>{restData.title.rendered}</h1>
+            <h1 className='animate__animated animate__bounce'>{restData.title.rendered}</h1>
             <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}>
             </div>
          </article>

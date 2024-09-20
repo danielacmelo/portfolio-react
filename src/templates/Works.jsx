@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Loading from '../utilities/Loading'
 import { restBase, featuredImage } from '../utilities/Utilities'
+import 'animate.css'
 
 const toUppercaseFirstLetter = (text) => {
     return text.split(' ')
@@ -32,7 +33,7 @@ const Works = () => {
         { isLoaded ?
             <>
                 <h1>Works</h1>
-                <div className="works">
+                <div className="works animate__animated animate__fadeIn">
                     {restData.map(post => 
                         <article key={post.id} id={`post-${post.id}`}>
                             <a href={`works/${post.slug}`}>
