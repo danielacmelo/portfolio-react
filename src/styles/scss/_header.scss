@@ -47,7 +47,11 @@ header {
         top: 4.5rem; 
         left: 0;
         right: 0;
-        padding-right: 4rem;
+        padding-right: 3rem;
+
+        li {
+            padding: .5rem 0 0;
+        }
     }
 
     .menu-toggle {
