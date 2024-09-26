@@ -4,6 +4,7 @@
 
 main {
     flex: 1;
+    transition: padding-top 0.5s ease-in-out;
 
     figure, img, a {
         margin: 0;
@@ -14,5 +15,5 @@ main {
 }
 
 .main-active {
-    padding-top: 6.5rem; // Adjust this value as needed
+    padding-top: 6.5rem; 
 }
