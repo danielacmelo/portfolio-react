@@ -3,7 +3,7 @@ import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
 import 'animate.css'
 
-const Home = () => {
+const Contact = () => {
     const restPath = restBase + 'pages/14'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false)
@@ -37,4 +37,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Contact;
