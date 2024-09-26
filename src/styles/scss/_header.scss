@@ -44,13 +44,17 @@ header {
     .site-navigation.active {
         display: block;
         position: absolute;
-        top: 4.5rem; 
+        top: 5rem; 
         left: 0;
         right: 0;
         padding-right: 3rem;
+        font-weight: bold;
 
         li {
-            padding: .5rem 0 0;
+            padding: 6px 0;
+            background-color: $backgroundColor;
+            position: relative;
+            z-index: 10;
         }
     }
 
