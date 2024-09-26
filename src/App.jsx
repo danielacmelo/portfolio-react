@@ -1,12 +1,13 @@
-import { Route, Routes, Link, NavLink } from 'react-router-dom'
-import { useState, useEffect, useRef } from 'react'
-import Home from './templates/Home'
-import About from './templates/About'
-import Contact from './templates/Contact'
-import Works from './templates/Works'
-import Work from './templates/Work'
-import daniLogo from './assets/daniLogo.svg'
-import './styles/scss/styles.scss'
+import { Route, Routes, Link, NavLink } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import Home from './templates/Home';
+import About from './templates/About';
+import Contact from './templates/Contact';
+import Works from './templates/Works';
+import Work from './templates/Work';
+import daniLogo from './assets/daniLogo.svg';
+import './styles/scss/styles.scss';
+import NotFound from './templates/NotFound';
 
 function App() {
     const [isActive, setIsActive] = useState(false);
@@ -21,6 +22,17 @@ function App() {
           document.removeEventListener('touchstart', handleClickOutside);
         };
     }, []);
+
+    useEffect(() => {
+        const mainElement = document.getElementById('main');
+        if (mainElement) {
+            if (isActive) {
+                mainElement.classList.add('main-active');
+            } else {
+                mainElement.classList.remove('main-active');
+            }
+        }
+    }, [isActive]);
 
     const handleClickOutside = (event) => {
         if (menuRef.current &&
@@ -53,6 +65,7 @@ function App() {
                         <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
                     </svg>
                 </button>
+                
 
                 <nav className={`site-navigation${isActive ? ' active' : ''}`} ref={menuRef}>
                     <ul>
@@ -71,6 +84,7 @@ function App() {
                 <Route path='/works' element={<Works />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
             <footer>
