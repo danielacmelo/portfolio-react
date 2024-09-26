@@ -58,14 +58,23 @@ function App() {
                     <div><img className="logo" src={daniLogo} alt="Dani Melo Logo" /></div>
                 </Link>
                 </div>
-
-                <button className="menu-toggle" aria-controls="header-menu" aria-expanded="false" aria-label="Menu Toggle" onClick={handleHamburgerClick} ref={hamburgerRef}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
-                        <title>Menu Icon</title>
-                        <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
-                    </svg>
-                </button>
                 
+                <button className="menu-toggle" aria-controls="header-menu" aria-expanded={isActive} aria-label="Menu Toggle" onClick={handleHamburgerClick} ref={hamburgerRef}>
+                    {isActive ? (
+                        // X Icon for when the menu is active
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+                            <title>Close Menu Icon</title>
+                            <path d="M18.36 6.64l-1.41-1.41L12 10.17 7.05 5.23 5.64 6.64l4.95 4.95-4.95 4.95 1.41 1.41L12 13.83l4.95 4.95 1.41-1.41-4.95-4.95 4.95-4.95z"></path>
+                        </svg>
+                    ) : (
+                        // Hamburger Icon for when the menu is not active
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+                            <title>Menu Icon</title>
+                            <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
+                        </svg>
+                    )}
+                </button>
+
 
                 <nav className={`site-navigation${isActive ? ' active' : ''}`} ref={menuRef}>
                     <ul>
