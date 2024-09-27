@@ -5,9 +5,10 @@ import About from './templates/About';
 import Contact from './templates/Contact';
 import Works from './templates/Works';
 import Work from './templates/Work';
+import NotFound from './templates/NotFound';
 import daniLogo from './assets/daniLogo.svg';
 import './styles/scss/styles.scss';
-import NotFound from './templates/NotFound';
+
 
 function App() {
     const [isActive, setIsActive] = useState(false);
